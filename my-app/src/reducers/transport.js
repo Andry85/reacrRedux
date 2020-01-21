@@ -9,10 +9,10 @@ const initialState = {
 export function transportReducer(state = initialState, action) {
   switch (action.type) {
     case SET_CARS:
-      return { ...state, year: action.payload, isFetching: true };
+      return { ...state, cars: state.cars, isFetching: true };
 
     case GET_CARS_SUCCESS:
-      return { ...state, photos: action.payload, isFetching: false };
+      return { ...state, cars: state.cars + 1, isFetching: false };
 
     default:
       return state;
